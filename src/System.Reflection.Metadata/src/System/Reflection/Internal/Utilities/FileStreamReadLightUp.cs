@@ -4,7 +4,7 @@
 
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
+using static Interop.Kernel32;
 
 namespace System.Reflection.Internal
 {
@@ -78,15 +78,5 @@ namespace System.Reflection.Internal
 
             return true;
         }
-
-        [DllImport(@"kernel32.dll", EntryPoint = "ReadFile", ExactSpelling = true, SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern unsafe bool ReadFile(
-             SafeHandle fileHandle,
-             byte* buffer,
-             int byteCount,
-             out int bytesRead,
-             IntPtr overlapped
-        );
     }
 }
