@@ -4,6 +4,7 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using static Interop.Kernel32;
 
 namespace System.Reflection.Internal
